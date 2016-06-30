@@ -1,1 +1,39 @@
-<h1>Signup</h1>
+<ion-view title="Signup" id="page6" class=" ">
+
+
+
+  <ion-content padding="true" class="has-header">
+    <form ng-submit='signupFormSubmit()' id="signup-form2" class="list ">
+      <ion-list id="signup-list2" class=" ">
+
+
+        <label class="item item-input " id="signupUsername">
+          <span class="input-label">Username</span>
+          <input type="text" placeholder="Username" ng-model='userObj.user.userName'>
+        </label>
+
+
+
+        <label class="item item-input " id="signupPassword">
+          <span class="input-label">Password</span>
+          <input type="text" placeholder="Password" ng-model='userObj.user.password'>
+        </label>
+
+
+        <label class="item item-input " id="signupVerify">
+          <span class="input-label">Verify Password</span>
+          <input type="text" placeholder="Verify Password">
+        </label>
+
+
+
+      </ion-list>
+      <input class="button button-block" id='signupSubmitButton' type="submit">
+    </form>
+  </ion-content>
+
+
+
+
+
+</ion-view>
