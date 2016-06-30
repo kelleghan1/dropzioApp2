@@ -1,22 +1,16 @@
-<h1>Login</h1>
 
-
-<ion-view title="Login">
-
-
+<ion-view title="<img src='img/dropsiologo1.png'>">
 
   <ion-content padding="true" class="has-header">
     <form ng-submit='signupFormSubmit()' id="signup-form2" class="list ">
       <ion-list id="signup-list2" class=" ">
 
         <label class="item item-input " id="signupUsername">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model='userObj.user.userName'>
+          <input type="text" placeholder='Username' ng-model='userObj.user.userName'>
         </label>
 
         <label class="item item-input " id="signupPassword">
-          <span class="input-label">Password</span>
-          <input type="text" ng-model='userObj.user.password'>
+          <input type="text" placeholder='Password' ng-model='userObj.user.password'>
         </label>
 
       </ion-list>
@@ -24,7 +18,7 @@
     </form>
 
     <div class='center'>
-      <h3>Don't have an account?</h3>
+      <h4>Don't have an account?</h4>
     </div>
 
     <button  ui-sref='signup' class="button button-block">Sign Up Here</button>
