@@ -22,7 +22,7 @@ angular.module('dropzio')
     var options = {
       destinationType: Camera.DestinationType.DATA_URL,
       encodingType: Camera.EncodingType.JPEG,
-      quality: 100,
+      quality: 100
     };
 
     $cordovaCamera.getPicture(options)
