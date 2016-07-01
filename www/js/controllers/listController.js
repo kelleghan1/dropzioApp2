@@ -1,4 +1,4 @@
 angular.module('dropzio')
-.controller('ListController', function(){
+.controller('ListController', function($state, $scope){
 
 })

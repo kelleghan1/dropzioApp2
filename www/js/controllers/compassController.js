@@ -1,4 +1,4 @@
 angular.module('dropzio')
-.controller('CompassController', function(){
+.controller('CompassController', function($state, $scope){
 
 })

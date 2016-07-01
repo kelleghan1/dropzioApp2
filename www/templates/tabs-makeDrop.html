@@ -1,1 +1,30 @@
-<h1>Make Drop</h1>
+<ion-view title="<img src='img/dropsiologo1.png'>">
+
+  <ion-content padding="true" class="has-header">
+
+    <form ng-submit='makeDropFormSubmit(); takeLocation()' id="signup-form2" class="list ">
+
+      <h4>Add Photo</h4>
+
+      <img ng-if='picTaken' id='droppedImg' ng-src="{{pictureUrl}}">
+      <img ng-if='!picTaken' id='imgIcon' ng-src="http://placehold.it/100/100">
+
+      <h4>Add Drop Title</h4>
+
+      <label class="item item-input " id="dropTitle">
+        <input type="text" ng-model='postObj.post.title'>
+      </label>
+
+      <h4>Add Drop Message</h4>
+
+
+      <label class="item item-input " id="dropContent">
+        <input type="text" ng-model='postObj.post.content'>
+      </label>
+
+      <input class="button button-block" id='makedropSubmitButton' type="submit">
+    </form>
+
+  </ion-content>
+
+</ion-view>

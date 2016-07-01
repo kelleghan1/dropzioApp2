@@ -1,44 +1,23 @@
 <ion-view class='has-header' title="<img src='img/dropsiologo1.png'>" id="page6" class=" ">
 
-  <!-- <ion-header-bar class="bar-stable custom-color">
-
-    <div ng-if='' class="buttons">
-      <button class="button icon ion-arrow-left-a" ui-sref="login"></button>
-    </div>
-
-    <img class="imageCenter" ng-src="img/dropsiologo1.png">
-
-  </ion-header-bar> -->
-
   <ion-content padding="true" class="has-header">
     <form ng-submit='signupFormSubmit()' id="signup-form2" class="list ">
-      <ion-list id="signup-list2" class="">
-
 
         <label class="item item-input " id="signupUsername">
           <input type="text" placeholder="Username" ng-model='userObj.user.userName'>
         </label>
 
-
-
         <label class="item item-input " id="signupPassword">
           <input type="text" placeholder="Password" ng-model='userObj.user.password'>
         </label>
 
-
-        <label class="item item-input " id="signupVerify">
+        <label class="item item-input" id="signupVerify">
           <input type="text" placeholder="Verify Password">
         </label>
 
-
-
-      </ion-list>
       <input class="button button-block" id='signupSubmitButton' type="submit">
     </form>
   </ion-content>
-
-
-
 
 
 </ion-view>

@@ -5,10 +5,9 @@ angular.module('dropzio')
 
 .service('SignupService', function($http, $q){
 
-
   return {
 
-    signUp: function (userObj){
+    signup: function (userObj){
       var deferred = $q.defer();
       $http.post('https://dropzio-server.herokuapp.com/users', userObj)
       .then(function(success){

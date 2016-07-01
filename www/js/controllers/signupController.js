@@ -10,17 +10,15 @@ angular.module('dropzio')
     }
   }
 
-
-
   $scope.signupFormSubmit = function() {
     console.log($scope.userObj);
-    SignupService.signUp($scope.userObj)
+    SignupService.signup($scope.userObj)
     .then(function(success){
-      $log.info(success);
-      // localStorage.setItem('Token', success.data.token);
-      // localStorage.setItem('currentUser', success.data.username)
-      // localStorage.setItem('currentId', success.data.id)
+
       $state.go('tabs.list')
+      localStorage.setItem('id', success.data.id);
+      localStorage.setItem('name', success.data.userName)
+      localStorage.setItem('password', success.data.password_digest)
     })
 
     .catch(function(err){
