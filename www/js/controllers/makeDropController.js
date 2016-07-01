@@ -38,22 +38,22 @@ angular.module('dropzio')
   };
 
 
-  $scope.takeLocation = function() {
-
-    var posOptions = {
-      timeout: 10000, enableHighAccuracy: false
-    };
-
-    $cordovaGeolocation
-    .getCurrentPosition(posOptions)
-    .then(function (position) {
-      console.log('position');
-      $scope.postObj.post.long = position.coords.longitude;
-      $scope.postObj.post.lat = position.coords.latitude;
-    }, function(err) {
-      console.log('err',err);
-    });
-  }
+  // $scope.takeLocation = function() {
+  //
+  //   var posOptions = {
+  //     timeout: 10000, enableHighAccuracy: false
+  //   };
+  //
+  //   $cordovaGeolocation
+  //   .getCurrentPosition(posOptions)
+  //   .then(function (position) {
+  //     console.log('position');
+  //     $scope.postObj.post.long = position.coords.longitude;
+  //     $scope.postObj.post.lat = position.coords.latitude;
+  //   }, function(err) {
+  //     console.log('err',err);
+  //   });
+  // }
 
 
   $scope.makeDropFormSubmit = function(){
