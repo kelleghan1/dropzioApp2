@@ -1,11 +1,11 @@
-<ion-view title="<img src='img/dropsiologo1.png'>">
-
+<ion-view title="List" id="page3" class=" ">
   <ion-content padding="true" class="has-header">
-
-
-    <h1>List</h1>
-
-
+    <ion-list id="list-list3" class=" ">
+      <ion-item ng-repeat='post in postList' class="item-avatar item-icon-right  " id="list-list-item6">
+        <h2>{{post.title}}</h2>
+        <p>{{post.username}}</p>
+        <i class="icon ion-android-arrow-dropup"></i>
+      </ion-item>
+    </ion-list>
   </ion-content>
-
 </ion-view>
