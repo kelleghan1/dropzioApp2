@@ -4,24 +4,20 @@
 
     <form ng-submit='makeDropFormSubmit()' id="signup-form2" class="list ">
 
-      <h4>Add Photo</h4>
 
       <img ng-if='picTaken' id='droppedImg' ng-src="{{pictureUrl}}">
-      <img ng-if='!picTaken' id='imgIcon' ng-src="http://placehold.it/100/100">
 
-      <h4>Add Drop Title</h4>
+      <input class="button button-block" id='addPhoto' type="button" ng-click='takePhoto()' value='Take Photo'>
 
       <label class="item item-input " id="dropTitle">
-        <input type="text" ng-model='postObj.post.title'>
+        <input type="text" placeholder='Add Drop Title' ng-model='postObj.post.title'>
       </label>
-
-      <h4>Add Drop Message</h4>
 
       <label class="item item-input " id="dropContent">
-        <input type="text" ng-model='postObj.post.content'>
+        <input type="text" placeholder="Add Drop Message" ng-model='postObj.post.content'>
       </label>
 
-      <input class="button button-block" id='makedropSubmitButton' type="submit">
+      <input class="button button-block" id='makedropSubmitButton' type="submit" value='Drop'>
     </form>
 
   </ion-content>

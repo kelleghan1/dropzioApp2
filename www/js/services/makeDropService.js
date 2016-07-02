@@ -13,12 +13,10 @@ angular.module('dropzio')
       .catch(function(error){
         deferred.reject(error)
       })
+      console.log('deferred', deferred.promise);
       return deferred.promise;
     }
 
   }
-
-
-
 
 });
