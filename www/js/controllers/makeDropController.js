@@ -1,5 +1,5 @@
 angular.module('dropzio')
-.controller('MakeDropController', function($q, $http, $state, $scope, MakeDropService, $cordovaGeolocation){
+.controller('MakeDropController', function($q, $http, $state, $scope, MakeDropService, $cordovaGeolocation, $cordovaCamera){
 
   $scope.postObj = {
     post: {
@@ -14,28 +14,29 @@ angular.module('dropzio')
     }
   }
 
-  $scope.pictureUrl;
+  $scope.pictureData;
   $scope.picTaken = false;
+  $scope.testCam = 'Testing'
 
-  // $scope.takePicture = function() {
-  //
-  //   var options = {
-  //     destinationType: Camera.DestinationType.DATA_URL,
-  //     encodingType: Camera.EncodingType.JPEG,
-  //     quality: 100
-  //   };
-  //
-  //   $cordovaCamera.getPicture(options)
-  //   .then(function(data){
-  //     // console.log('camera data ' + angular.toJson(data));
-  //     $scope.pictureUrl = "data:image/jpeg;base64," + data;
-  //     // $scope.pictureData = data;
-  //     $scope.picTaken = true;
-  //   }, function(error) {
-  //     console.log('camera error ' + angular.toJson(error));
-  //   });
-  //
-  // };
+  $scope.takePhoto = function() {
+
+    var options = {
+      destinationType: Camera.DestinationType.DATA_URL,
+      encodingType: Camera.EncodingType.JPEG,
+      quality: 100
+    };
+
+    $cordovaCamera.getPicture(options)
+    .then(function(data){
+      // console.log('camera data ' + angular.toJson(data));
+      $scope.pictureData = "data:image/jpeg;base64," + data;
+      // $scope.pictureData = data;
+      $scope.picTaken = true;
+    }, function(error) {
+      console.log('camera error ' + angular.toJson(error));
+    });
+
+  };
 
 
 
@@ -51,7 +52,7 @@ angular.module('dropzio')
     } else {
       $scope.postObj.post.imgURL = 'False';
     }
-    
+
     $cordovaGeolocation
     .getCurrentPosition(posOptions)
     .then(function (position) {
