@@ -70,37 +70,25 @@ angular.module('dropzio')
       .then(function(result){
 
         if ($scope.picTaken) {
-          console.log('true');
 
           $scope.picPackage = {
             id: result.data.id,
             image: $scope.pictureData
           }
 
-          console.log('package', $scope.picPackage);
-          // SendPhotoService.send($scope.picPackage)
-
-
-
-
-
-
-          // function ($scope, $firebaseArray) {
-          console.log('balls');
           var imagesRef = new Firebase("https://imageuploadangularfirebase.firebaseio.com/images");
-          $scope.images = $firebaseArray(imagesRef);
+          $scope.images = $firebaseArray(imagesRef)
 
           $scope.addImage = function(picObj) {
             $scope.images.$add(picObj)
-            .then(function(data){
-              console.log('endservice', data);
-            })
           }
-          // }
-
 
           $scope.addImage($scope.picPackage)
+          .then(function(response){
 
+            console.log(response);
+
+          })
 
         }
 
