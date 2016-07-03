@@ -73,6 +73,7 @@ angular.module('dropzio')
           console.log('true');
 
           $scope.picPackage = {
+            id: result.data.id,
             image: $scope.pictureData
           }
 
