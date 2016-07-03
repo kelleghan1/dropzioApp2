@@ -1,9 +1,7 @@
 /* Empty. Add your own CSS if you like */
 
 .custom-color {
-
   background-color: black!important;
-
 }
 
 .imageCenter {
@@ -18,4 +16,9 @@
 
 #dropImg {
   width: 100%
+}
+
+#imgDisplay {
+  width: 100%;
+  height: 100%;
 }

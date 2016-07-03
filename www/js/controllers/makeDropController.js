@@ -31,6 +31,8 @@ angular.module('dropzio')
   $scope.takePhoto = function() {
 
     var options = {
+      targetWidth: 500,
+      targetHeight: 100,
       destinationType: Camera.DestinationType.DATA_URL,
       encodingType: Camera.EncodingType.JPEG,
       quality: 100
@@ -86,6 +88,7 @@ angular.module('dropzio')
         .then(function(done){
           $scope.postObj.post.title = '';
           $scope.postObj.post.content = '';
+          $scope.picTaken = false;
           $state.go('tabs.list')
         })
 
@@ -94,6 +97,7 @@ angular.module('dropzio')
         .then(function(done){
           $scope.postObj.post.title = '';
           $scope.postObj.post.content = '';
+          $scope.picTaken = false;
           $state.go('tabs.list')
         })
       }

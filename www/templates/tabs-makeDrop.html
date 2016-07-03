@@ -5,10 +5,10 @@
     <form ng-submit='makeDropFormSubmit()' id="signup-form2" class="list ">
 
 
-      <img ng-if='picTaken' id='droppedImg' ng-src="{{pictureUrl}}">
+      <img id='imgDisplay' ng-if='picTaken' ng-src="{{pictureData}}">
 
       <input ng-click='takePhoto()' class="button button-block" id='takePhoto' type="button" value='Take Photo'>
-      <p>{{testCam}}</p>
+      <!-- <p>{{testCam}}</p> -->
 
       <label class="item item-input " id="dropTitle">
         <input placeholder='Drop Title' type="text" ng-model='postObj.post.title'>
