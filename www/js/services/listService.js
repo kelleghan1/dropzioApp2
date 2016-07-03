@@ -16,6 +16,23 @@ angular.module('dropzio')
       return deferred.promise;
     }
 
+
+    postScore: function(postId){
+      var deferred = $q.defer();
+      $http.post('https://dropzio-server.herokuapp.com/posts', postId)
+      .then(function(success){
+        deferred.resolve(success.data.post)
+      })
+      .catch(function(error){
+        deferred.reject(error)
+      })
+      return deferred.promise;
+    }
+
+
+
+
+
   }
 
 
