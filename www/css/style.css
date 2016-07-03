@@ -10,12 +10,13 @@ body {
 }
 
 /*.imageCenter {
-  margin: 0 auto;
-  height: 32px;
+margin: 0 auto;
+height: 32px;
 }*/
 
 .textCenter {
-text-align: center;}
+  text-align: center;
+}
 
 #dropImg {
   width: 100%
@@ -24,4 +25,9 @@ text-align: center;}
 #imgDisplay {
   width: 100%;
   height: 100%;
+}
+
+.dropIcon {
+width: 50%
+
 }
