@@ -8,7 +8,7 @@
       <img ng-if='picTaken' id='droppedImg' ng-src="{{pictureUrl}}">
 
       <input ng-click='takePhoto()' class="button button-block" id='takePhoto' type="button" value='Take Photo'>
-      <p>{{pictureData}}</p>
+      <p>{{testCam}}</p>
 
       <label class="item item-input " id="dropTitle">
         <input placeholder='Drop Title' type="text" ng-model='postObj.post.title'>
@@ -18,7 +18,7 @@
         <input placeholder='Drop Message' type="text" ng-model='postObj.post.content'>
       </label>
 
-      <input class="button button-block" id='makedropSubmitButton' type="submit">
+      <input class="button button-block" id='makedropSubmitButton' type="submit" value='Drop'>
     </form>
 
   </ion-content>

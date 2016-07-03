@@ -16,7 +16,7 @@ angular.module('dropzio')
 
   $scope.pictureData;
   $scope.picTaken = false;
-  $scope.testCam = 'Testing'
+  $scope.testCam = 'newtest'
 
   $scope.takePhoto = function() {
 
@@ -64,11 +64,11 @@ angular.module('dropzio')
     .then(function(done){
       MakeDropService.drop($scope.postObj)
     })
-
-
-
-
-    $state.go('tabs.list')
+    .then(function(done){
+      $scope.postObj.post.title = '';
+      $scope.postObj.post.content = '';
+      $state.go('tabs.list')
+    })
   }
 
 
