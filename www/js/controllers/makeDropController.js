@@ -38,18 +38,13 @@ angular.module('dropzio')
 
     $cordovaCamera.getPicture(options)
     .then(function(data){
-      // console.log('camera data ' + angular.toJson(data));
       $scope.pictureData = "data:image/jpeg;base64," + data;
-      // $scope.pictureData = data;
       $scope.picTaken = true;
     }, function(error) {
       console.log('camera error ' + angular.toJson(error));
     });
 
   };
-
-
-
 
   $scope.makeDropFormSubmit = function(){
 
@@ -66,38 +61,43 @@ angular.module('dropzio')
       console.log('err',err);
     })
     .then(function(done){
-      MakeDropService.drop($scope.postObj)
-      .then(function(result){
 
-        if ($scope.picTaken) {
+      if ($scope.picTaken) {
 
-          $scope.picPackage = {
-            id: result.data.id,
-            image: $scope.pictureData
-          }
-
-          var imagesRef = new Firebase("https://imageuploadangularfirebase.firebaseio.com/images");
-          $scope.images = $firebaseArray(imagesRef)
-
-          $scope.addImage = function(picObj) {
-            $scope.images.$add(picObj)
-          }
-
-          $scope.addImage($scope.picPackage)
-          .then(function(response){
-
-            console.log(response);
-
-          })
-
+        $scope.picPackage = {
+          image:
+          // 'picdata'
+          $scope.pictureData
         }
 
-      })
-      .then(function(done){
-        $scope.postObj.post.title = '';
-        $scope.postObj.post.content = '';
-        $state.go('tabs.list')
-      })
+        var imagesRef = new Firebase("https://imageuploadangularfirebase.firebaseio.com/images");
+        $scope.images = $firebaseArray(imagesRef)
+        $scope.addImage = function(picObj) {
+          return $scope.images.$add(picObj)
+        }
+
+        $scope.addImage($scope.picPackage)
+        .then(function(response){
+          $scope.postObj.post.imgURL = response.path.o[1];
+        })
+        .then(function(done){
+          MakeDropService.drop($scope.postObj)
+        })
+        .then(function(done){
+          $scope.postObj.post.title = '';
+          $scope.postObj.post.content = '';
+          $state.go('tabs.list')
+        })
+
+      } else {
+        MakeDropService.drop($scope.postObj)
+        .then(function(done){
+          $scope.postObj.post.title = '';
+          $scope.postObj.post.content = '';
+          $state.go('tabs.list')
+        })
+      }
+
     })
   }
 
