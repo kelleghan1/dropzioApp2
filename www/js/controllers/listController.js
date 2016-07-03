@@ -11,16 +11,18 @@ angular.module('dropzio')
   $scope.postScore = function(postId, score){
 
     $scope.scoreObj = {
-      post: {
-        postId: postId,
-        score: score
+      "post": {
+        "postId": postId,
+        "score": score
       }
     }
 
-    ListService.sendScore($scope.postObj)
+    this.post.score += score;
+
+    ListService.sendScore($scope.scoreObj)
     .then(function(result){
       console.log(result);
-    }
+    })
 
   }
 
