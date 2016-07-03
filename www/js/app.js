@@ -17,8 +17,12 @@ angular.module('dropzio', ['ionic', 'ngCordova', 'firebase'])
       // a much nicer keyboard experience.
       cordova.plugins.Keyboard.disableScroll(true);
     }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
+    setTimeout(function() {
+    if (window.StatusBar) {
+      StatusBar.styleLightContent();
+      StatusBar.styleBlackTranslucent();
+      StatusBar.styleBlackOpaque();
     }
+  }, 300);
   });
 })
