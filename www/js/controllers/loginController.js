@@ -11,7 +11,8 @@ angular.module('dropzio')
   }
 
   $scope.loginFormSubmit = function() {
-
+    console.log($scope.userObj);
+    
     $scope.userObj.user.userName = $scope.userObj.user.userName.toLowerCase();
     LoginService.login($scope.userObj)
     .then(function(success){
