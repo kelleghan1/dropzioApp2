@@ -15,7 +15,6 @@ angular.module('dropzio')
       })
       return deferred.promise;
     }
-
   }
 
 
