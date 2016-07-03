@@ -31,8 +31,9 @@ angular.module('dropzio')
   $scope.takePhoto = function() {
 
     var options = {
-      targetWidth: 500,
-      targetHeight: 100,
+      allowEdit : true,
+      targetWidth: 600,
+      targetHeight: 600,
       destinationType: Camera.DestinationType.DATA_URL,
       encodingType: Camera.EncodingType.JPEG,
       quality: 100
