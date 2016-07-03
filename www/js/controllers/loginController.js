@@ -12,7 +12,7 @@ angular.module('dropzio')
 
   $scope.loginFormSubmit = function() {
 
-
+    $scope.userObj.user.userName = $scope.userObj.user.userName.toLowerCase();
     LoginService.login($scope.userObj)
     .then(function(success){
       localStorage.setItem('id', success.data.id);

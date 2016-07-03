@@ -1,8 +1,5 @@
 angular.module('dropzio')
 
-
-
-
 .service('LoginService', function($http, $q){
 
   return {
