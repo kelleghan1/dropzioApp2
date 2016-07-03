@@ -6,10 +6,10 @@
         {{post.title}} <br>
         {{post.user_id}}
 
-        <div style='border: none; padding-right: 0' class="buttons customButtons item">
-          <button class="button button-icon ion-arrow-down-a"></button>
+        <div style='border: none; padding-right: 0' class="buttons item">
+          <button ng-click='postScore({{post.id}}, -1)' class="button button-icon ion-arrow-down-a"></button>
           {{post.score}}
-          <button class="button button-icon ion-arrow-up-a"></button>
+          <button ng-click='postScore({{post.id}}, 1)' class="button button-icon ion-arrow-up-a"></button>
         </div>
       </ion-item>
 

@@ -16,9 +16,9 @@ angular.module('dropzio')
       return deferred.promise;
     },
 
-    postScore: function(postId){
+    sendScore: function(postObj){
       var deferred = $q.defer();
-      $http.post('https://dropzio-server.herokuapp.com/posts', postId)
+      $http.post('https://dropzio-server.herokuapp.com/changescore', postObj)
       .then(function(success){
         deferred.resolve(success.data.post)
       })

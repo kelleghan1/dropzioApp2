@@ -8,9 +8,21 @@ angular.module('dropzio')
     $scope.postList = result;
   })
 
-  
+  $scope.postScore = function(postId, score){
 
+    $scope.scoreObj = {
+      post: {
+        postId: postId,
+        score: score
+      }
+    }
 
+    ListService.sendScore($scope.postObj)
+    .then(function(result){
+      console.log(result);
+    }
+
+  }
 
 
 })
