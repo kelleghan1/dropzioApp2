@@ -14,7 +14,7 @@ angular.module('dropzio')
         deferred.reject(error)
       })
       return deferred.promise;
-    }
+    },
 
     postScore: function(postId){
       var deferred = $q.defer();
@@ -29,7 +29,7 @@ angular.module('dropzio')
     }
 
 
-    
+
 
   }
 

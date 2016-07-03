@@ -9,10 +9,34 @@ body {
   background-color: black!important;
 }
 
-/*.imageCenter {
-margin: 0 auto;
-height: 32px;
-}*/
+.scoreContainer {
+  float: right;
+}
+
+.listLeft {
+  overflow: auto;
+  display:  inline;
+}
+
+.listRight {
+  float: right;
+}
+
+.ion-arrow-down-a {
+  margin: auto 0;
+  font-size: 30px!important;
+}
+
+.ion-arrow-up-a {
+  padding-right: 0;
+  margin-right: 0!important;
+  border-right: 0!important;
+  font-size: 30px!important;
+}
+
+.customButtons {
+  /*vertical-align: middle!important;*/
+}
 
 .textCenter {
   text-align: center;
@@ -28,11 +52,11 @@ height: 32px;
 }
 
 .dropIcon {
-width: 50%
+  width: 50%
 
 }
 
 #dropIconWrap {
 
-/*vertical-align: bottom;*/
+  /*vertical-align: bottom;*/
 }
