@@ -9,15 +9,13 @@ body {
   background-color: black!important;
 }
 
-.imageCenter {
+/*.imageCenter {
   margin: 0 auto;
-  height: 34px;
-}
+  height: 32px;
+}*/
 
-.center {
-  text-align: center;
-  margin: 0 auto;
-}
+.textCenter {
+text-align: center;}
 
 #dropImg {
   width: 100%
