@@ -11,6 +11,7 @@ angular.module('dropzio')
   }
 
   $scope.signupFormSubmit = function() {
+    $scope.userObj.user.userName = $scope.userObj.user.userName.toLowerCase();
     console.log($scope.userObj);
     SignupService.signup($scope.userObj)
     .then(function(success){
