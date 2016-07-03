@@ -1,5 +1,15 @@
 angular.module('dropzio')
-.controller('MakeDropController', function($q, $http, $state, $scope, MakeDropService, $cordovaGeolocation, $cordovaCamera){
+.controller('MakeDropController', function(
+  $q,
+  $http,
+  $state,
+  $scope,
+  MakeDropService,
+  $cordovaGeolocation,
+  $cordovaCamera,
+  $firebaseArray
+  // SendPhotoService
+){
 
   $scope.postObj = {
     post: {
@@ -47,12 +57,6 @@ angular.module('dropzio')
       timeout: 10000, enableHighAccuracy: true
     };
 
-    if ($scope.picTaken = true) {
-      $scope.postObj.post.imgURL = 'True';
-    } else {
-      $scope.postObj.post.imgURL = 'False';
-    }
-
     $cordovaGeolocation
     .getCurrentPosition(posOptions)
     .then(function (position) {
@@ -63,11 +67,48 @@ angular.module('dropzio')
     })
     .then(function(done){
       MakeDropService.drop($scope.postObj)
-    })
-    .then(function(done){
-      $scope.postObj.post.title = '';
-      $scope.postObj.post.content = '';
-      $state.go('tabs.list')
+      .then(function(result){
+
+        if ($scope.picTaken) {
+          console.log('true');
+
+          $scope.picPackage = {
+            image: $scope.pictureData
+          }
+
+          console.log('package', $scope.picPackage);
+          // SendPhotoService.send($scope.picPackage)
+
+
+
+
+
+
+          // function ($scope, $firebaseArray) {
+          console.log('balls');
+          var imagesRef = new Firebase("https://imageuploadangularfirebase.firebaseio.com/images");
+          $scope.images = $firebaseArray(imagesRef);
+
+          $scope.addImage = function(picObj) {
+            $scope.images.$add(picObj)
+            .then(function(data){
+              console.log('endservice', data);
+            })
+          }
+          // }
+
+
+          $scope.addImage($scope.picPackage)
+
+
+        }
+
+      })
+      .then(function(done){
+        $scope.postObj.post.title = '';
+        $scope.postObj.post.content = '';
+        $state.go('tabs.list')
+      })
     })
   }
 
