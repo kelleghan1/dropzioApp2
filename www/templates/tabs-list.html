@@ -5,7 +5,7 @@
       <ion-item ng-repeat='post in postList' class="item-avatar item-icon-right  " id="list-list-item6">
 
 
-        <img src="https://imageuploadangularfirebase.firebaseio.com/{{post.imgURL}}">
+        <img src="https://imageuploadangularfirebase.firebaseio.com/images/" + {{post.imgURL}} + "/image:data:image/png;base64">
         <h2>{{post.title}}</h2>
         <p>{{post.user_id}}</p>
         <i class="icon ion-android-arrow-dropup"></i>
