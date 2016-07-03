@@ -3,11 +3,10 @@ angular.module('dropzio')
 
   $scope.postList;
 
-
-
   ListService.getPosts()
   .then(function(result){
     $scope.postList = result;
+
   })
 
 })

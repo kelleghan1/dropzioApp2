@@ -99,12 +99,7 @@ angular.module('dropzio')
       }
 
     })
+
   }
-
-
-
-
-
-
 
 })
