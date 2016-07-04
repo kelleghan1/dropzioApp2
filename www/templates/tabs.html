@@ -1,16 +1,20 @@
 <ion-view title="<img src='img/dropsiologo1.png'>" id="page1">
   <ion-tabs class="tabs-light tabs-icon-top " id="tabsController">
 
-    <ion-tab title="Compass" icon="ion-android-compass" ui-sref="tabs.compass" id="compassTab">
+    <ion-tab title="Compass" icon="ion-android-compass" ui-sref="tabs.compass">
       <ion-nav-view name="tab-compass"></ion-nav-view>
     </ion-tab>
 
-    <ion-tab title="List" icon="ion-ios-list-outline" ui-sref="tabs.list" id="listTab">
+    <ion-tab title="List" icon="ion-ios-list-outline" ui-sref="tabs.list">
       <ion-nav-view name="tab-list"></ion-nav-view>
     </ion-tab>
 
-    <ion-tab title="Make Drop" icon="ion-android-pin" ui-sref="tabs.makedrop" id="makeDropTab">
+    <ion-tab title="Make Drop" icon="ion-android-pin" ui-sref="tabs.makedrop">
       <ion-nav-view name="tab-makedrop"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab hidden="true" title="Single Post">
+      <ion-nav-view name="tab-singlepost"></ion-nav-view>
     </ion-tab>
 
   </ion-tabs>

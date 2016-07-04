@@ -18,7 +18,7 @@ angular.module('dropzio', ['ionic', 'ngCordova', 'firebase'])
       cordova.plugins.Keyboard.disableScroll(true);
     }
     setTimeout(function() {
-    if (window.StatusBar) {
+      if (window.StatusBar) {
       StatusBar.styleLightContent();
       StatusBar.styleBlackTranslucent();
       StatusBar.styleBlackOpaque();

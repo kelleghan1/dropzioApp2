@@ -1,12 +1,12 @@
 <ion-view title="<img src='img/dropsiologo1.png'>" id="page3" class=" ">
   <ion-content padding="false" class="has-header">
     <ion-list>
-      <ion-item ng-repeat='post in postList' class="item-avatar item item-button-right">
-        <img src="" alt="">
+      <ion-item style='padding-right: 0' ng-repeat='post in postList' ui-sref="tabs.singlepost({postId: post.id})" class="item-avatar item item-button-right">
+        <img src="">
         {{post.title}} <br>
         {{post.user_id}}
 
-        <div style='border: none; padding-right: 0' class="buttons item">
+        <div style='border: none; padding-right: 0' class="buttons customList item">
           <button ng-click='postScore({{post.id}}, -1)' class="button button-icon ion-arrow-down-a"></button>
           <p class='textSmall' >{{post.score}}</p>
           <button ng-click='postScore({{post.id}}, 1)' class="button button-icon ion-arrow-up-a"></button>

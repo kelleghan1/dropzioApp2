@@ -50,23 +50,15 @@
       }
     })
 
-    // .state('tabs.compass', {
-    //   url: '/compass',
-    //   templateUrl: 'templates/tabs-compass.html',
-    //   controller: 'CompassController'
-    // })
-    //
-    // .state('tabs.list', {
-    //   url: '/list',
-    //   templateUrl: 'templates/tabs-list.html',
-    //   controller: 'ListController'
-    // })
-    //
-    // .state('tabs.makedrop', {
-    //   url: '/makedrop',
-    //   templateUrl: 'templates/tabs-makeDrop.html',
-    //   controller: 'MakeDropController'
-    // })
+    .state('tabs.singlepost', {
+      url: '/:postId',
+      views: {
+        'tab-singlepost': {
+          templateUrl: 'templates/tabs-singlepost.html',
+          controller: 'SinglePostController'
+        }
+      }
+    })
 
     .state('tabs', {
       url: '/tabs',
