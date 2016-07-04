@@ -8,8 +8,8 @@ angular.module('dropzio')
     $scope.postList = result;
   })
 
-  $scope.postScore = function(postId, score){
-
+  $scope.postScore = function(postId, score, $event){
+    $event.stopPropagation();
     $scope.scoreObj = {
       "post": {
         "postId": postId,
