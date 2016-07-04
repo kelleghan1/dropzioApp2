@@ -23,6 +23,6 @@ angular.module('dropzio', ['ionic', 'ngCordova', 'firebase'])
       StatusBar.styleBlackTranslucent();
       StatusBar.styleBlackOpaque();
     }
-  }, 300);
+  }, 400);
   });
 })

@@ -1,7 +1,15 @@
 <ion-view title="<img src='img/dropsiologo1.png'>">
   <ion-content padding="false" class="has-header">
-    <img src="" alt="">
+    <img src="{{$scope.currentImage}}">
+
     <h1>{{currentPost[0].title}}</h1>
     <h2>{{currentPost[0].content}}</h2>
+
+
+
+    <div ng-repeat="image in images" ng-if='image.$id==currentPost[0].imgURL'>
+      <img ng-src="{{image.image}}" class="image" alt="" />
+    </div>
+
   </ion-content>
 </ion-view>

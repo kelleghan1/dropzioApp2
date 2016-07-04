@@ -1,5 +1,5 @@
 angular.module('dropzio')
-.controller('ListController', function($state, $scope, ListService){
+.controller('ListController', function($state, $scope, ListService, $firebaseArray){
 
   $scope.postList;
 
@@ -26,7 +26,6 @@ angular.module('dropzio')
     .then(function(result){
       console.log(result);
     })
-
   }
 
 

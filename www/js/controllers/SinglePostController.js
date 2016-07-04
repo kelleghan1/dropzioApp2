@@ -5,12 +5,14 @@ angular.module('dropzio')
   SignupService,
   $scope,
   $stateParams,
-  ListService
+  ListService,
+  $firebaseArray
 ){
 
   $stateParams.postId;
   $scope.postList;
   $scope.currentPost;
+  $scope.currentImage;
 
   ListService.getPosts()
   .then(function(result){
@@ -21,8 +23,22 @@ angular.module('dropzio')
         return true
       }
     })
-    console.log($scope.currentPost);
   })
+
+
+  var imagesRef = new Firebase("https://imageuploadangularfirebase.firebaseio.com/images");
+  $scope.images = $firebaseArray(imagesRef);
+
+  // setTimeout(function(){
+  //   for (var key in $scope.images){
+  //     console.log('key',$scope.images[key]);
+  //     console.log($scope.currentPost[0]);
+  //     if ($scope.images[key].$id===$scope.currentPost[0].imgURL) {
+  //       // $scope.currentImage=$scope.images[key].image
+  //       console.log(1);
+  //     }
+  //   }
+  // }, 3000)
 
 
 
