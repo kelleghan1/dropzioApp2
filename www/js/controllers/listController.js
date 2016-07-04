@@ -1,12 +1,48 @@
 angular.module('dropzio')
-.controller('ListController', function($state, $scope, ListService, $firebaseArray){
+.controller('ListController', function(
+  $state,
+  $scope,
+  ListService,
+  $firebaseArray,
+  $cordovaGeolocation,
+  $interval
+){
 
   $scope.postList;
+  // $scope.currentUserId = localStorage.getItem('id');
 
-  ListService.getPosts()
-  .then(function(result){
-    $scope.postList = result;
-  })
+  // var postListInterval =
+  $interval(function(){
+
+    var posOptions = {
+      timeout: 10000, enableHighAccuracy: true
+    };
+
+    $cordovaGeolocation
+    .getCurrentPosition(posOptions)
+    .then(function (position) {
+      console.log('interval1');
+      ListService.sendLocation(
+        {
+          user: {
+            lat: position.coords.latitude,
+            long: position.coords.longitude
+          }
+        }
+      )
+    }, function(err) {
+      console.log('err',err);
+    })
+    .then(function(done){
+      ListService.getPosts()
+      .then(function(result){
+        console.log('interval2');
+        $scope.postList = result;
+      })
+    })
+
+  }, 5000)
+
 
   $scope.endEvent = function($event){
     $event.stopPropagation();
@@ -28,5 +64,7 @@ angular.module('dropzio')
     })
   }
 
+  var imagesRef = new Firebase("https://imageuploadangularfirebase.firebaseio.com/images");
+  $scope.images = $firebaseArray(imagesRef);
 
 })

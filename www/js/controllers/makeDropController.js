@@ -105,6 +105,10 @@ angular.module('dropzio')
 
     })
 
+    StatusBar.styleLightContent();
+    StatusBar.styleBlackTranslucent();
+    StatusBar.styleBlackOpaque();
+
   }
 
 })

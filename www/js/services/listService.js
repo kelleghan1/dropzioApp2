@@ -6,7 +6,7 @@ angular.module('dropzio')
 
     getPosts: function (){
       var deferred = $q.defer();
-      $http.get('https://dropzio-server.herokuapp.com/postlist')
+      $http.get('https://dropzio-server.herokuapp.com/geofilteredposts/' + localStorage.getItem('id'))
       .then(function(success){
         deferred.resolve(success.data.post)
       })
@@ -26,7 +26,21 @@ angular.module('dropzio')
         deferred.reject(error)
       })
       return deferred.promise;
-    }
+    },
+
+    sendLocation: function (locationObj){
+      var deferred = $q.defer();
+      $http.put('https://dropzio-server.herokuapp.com/users/' + localStorage.getItem('id'), locationObj)
+      .then(function(success){
+        deferred.resolve(success.data.post)
+      })
+      .catch(function(error){
+        deferred.reject(error)
+      })
+      return deferred.promise;
+    },
+
+
 
 
 

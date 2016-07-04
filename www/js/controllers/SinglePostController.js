@@ -40,6 +40,4 @@ angular.module('dropzio')
   //   }
   // }, 3000)
 
-
-
 })
