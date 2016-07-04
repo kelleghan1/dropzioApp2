@@ -8,6 +8,10 @@ angular.module('dropzio')
     $scope.postList = result;
   })
 
+  $scope.endEvent = function($event){
+    $event.stopPropagation();
+  }
+
   $scope.postScore = function(postId, score, $event){
     $event.stopPropagation();
     $scope.scoreObj = {
@@ -18,7 +22,6 @@ angular.module('dropzio')
     }
 
     this.post.score += score;
-
     ListService.sendScore($scope.scoreObj)
     .then(function(result){
       console.log(result);
