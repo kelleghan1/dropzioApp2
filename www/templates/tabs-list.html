@@ -6,7 +6,7 @@
         {{post.title}} <br>
         {{post.user_id}}
 
-        <div style='border: none; padding-right: 0; z-index:100' class="buttons customList item">
+        <div style='top:0' class="buttons customList item">
           <button ng-click='postScore({{post.id}}, -1, $event)' class="button button-icon ion-arrow-down-a"></button>
           <p class='textSmall' >{{post.score}}</p>
           <button ng-click='postScore({{post.id}}, 1, $event)' class="button button-icon ion-arrow-up-a"></button>
