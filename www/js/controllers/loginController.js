@@ -5,13 +5,15 @@ angular.module('dropzio')
   $scope.landing1 = 1;
   $scope.landing2 = 1;
   $scope.landing3 = 1;
+  $scope.landing4 = 1;
+  $scope.landing5 = 1;
 
   $scope.landingImage = function(){
 
     $timeout(function(){
       console.log('switch');
       $scope.landing = 0;
-    }, 800)
+    }, 600)
 
   }()
 
@@ -20,7 +22,7 @@ angular.module('dropzio')
     $timeout(function(){
       console.log('switch');
       $scope.landing1 = 0;
-    }, 1300)
+    }, 700)
 
   }()
 
@@ -29,7 +31,7 @@ angular.module('dropzio')
     $timeout(function(){
       console.log('switch');
       $scope.landing2 = 0;
-    }, 1600)
+    }, 800)
 
   }()
 
@@ -38,7 +40,25 @@ angular.module('dropzio')
     $timeout(function(){
       console.log('switch');
       $scope.landing3 = 0;
-    }, 2100)
+    }, 1100)
+
+  }()
+
+  $scope.landingImage4 = function(){
+
+    $timeout(function(){
+      console.log('switch');
+      $scope.landing4 = 0;
+    }, 1250)
+
+  }()
+
+  $scope.landingImage5 = function(){
+
+    $timeout(function(){
+      console.log('switch');
+      $scope.landing5 = 0;
+    }, 1500)
 
   }()
 
