@@ -8,6 +8,13 @@ body {
   width:100%
 }
 
+.landingImg {
+  position: fixed;
+  top: 0;
+  left:0;
+  width: 100%;
+  z-index: 10000;
+}
 
 .custom-color {
   background-color: black!important;

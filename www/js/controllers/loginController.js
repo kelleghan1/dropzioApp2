@@ -1,5 +1,46 @@
 angular.module('dropzio')
-.controller('LoginController', function(LoginService, $scope, $state, $log){
+.controller('LoginController', function(LoginService, $scope, $state, $log, $timeout){
+
+  $scope.landing = 1;
+  $scope.landing1 = 1;
+  $scope.landing2 = 1;
+  $scope.landing3 = 1;
+
+  $scope.landingImage = function(){
+
+    $timeout(function(){
+      console.log('switch');
+      $scope.landing = 0;
+    }, 800)
+
+  }()
+
+  $scope.landingImage1 = function(){
+
+    $timeout(function(){
+      console.log('switch');
+      $scope.landing1 = 0;
+    }, 1300)
+
+  }()
+
+  $scope.landingImage2 = function(){
+
+    $timeout(function(){
+      console.log('switch');
+      $scope.landing2 = 0;
+    }, 1600)
+
+  }()
+
+  $scope.landingImage3 = function(){
+
+    $timeout(function(){
+      console.log('switch');
+      $scope.landing3 = 0;
+    }, 2100)
+
+  }()
 
   $scope.userObj = {
     user: {
