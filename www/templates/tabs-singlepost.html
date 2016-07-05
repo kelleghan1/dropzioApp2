@@ -3,6 +3,8 @@
 
     <h1>{{currentPost[0].title}}</h1>
     <h2>{{currentPost[0].content}}</h2>
+    <h3>{{currentPost[0].lat}}</h3>
+    <h3>{{currentPost[0].long}}</h3>
 
     <div ng-repeat="image in images" ng-if='image.$id==currentPost[0].imgURL'>
       <img ng-src="{{image.image}}" class="image" />

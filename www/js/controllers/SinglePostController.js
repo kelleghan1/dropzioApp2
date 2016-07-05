@@ -25,7 +25,6 @@ angular.module('dropzio')
     })
   })
 
-
   var imagesRef = new Firebase("https://imageuploadangularfirebase.firebaseio.com/images");
   $scope.images = $firebaseArray(imagesRef);
 

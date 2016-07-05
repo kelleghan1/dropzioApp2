@@ -26,17 +26,16 @@ angular.module('dropzio')
 
   $scope.pictureData;
   $scope.picTaken = false;
-  $scope.testCam = 'newtest'
 
   $scope.takePhoto = function() {
 
     var options = {
       allowEdit : true,
-      targetWidth: 600,
-      targetHeight: 600,
+      targetWidth: 500,
+      targetHeight: 500,
       destinationType: Camera.DestinationType.DATA_URL,
       encodingType: Camera.EncodingType.JPEG,
-      quality: 100
+      quality: 60
     };
 
     $cordovaCamera.getPicture(options)
@@ -51,26 +50,22 @@ angular.module('dropzio')
 
   $scope.makeDropFormSubmit = function(){
 
-    var posOptions = {
-      timeout: 10000, enableHighAccuracy: true
+    var watchOptions = {
+      timeout: 15000,
+      enableHighAccuracy: false
     };
 
     $cordovaGeolocation
-    .getCurrentPosition(posOptions)
+    .getCurrentPosition(watchOptions)
     .then(function (position) {
       $scope.postObj.post.long = position.coords.longitude;
       $scope.postObj.post.lat = position.coords.latitude;
-    }, function(err) {
-      console.log('err',err);
     })
     .then(function(done){
 
       if ($scope.picTaken) {
-
         $scope.picPackage = {
-          image:
-          // 'picdata'
-          $scope.pictureData
+          image: $scope.pictureData
         }
 
         var imagesRef = new Firebase("https://imageuploadangularfirebase.firebaseio.com/images");
@@ -78,6 +73,7 @@ angular.module('dropzio')
         $scope.addImage = function(picObj) {
           return $scope.images.$add(picObj)
         }
+        $state.go('tabs.list')
 
         $scope.addImage($scope.picPackage)
         .then(function(response){
@@ -90,7 +86,6 @@ angular.module('dropzio')
           $scope.postObj.post.title = '';
           $scope.postObj.post.content = '';
           $scope.picTaken = false;
-          $state.go('tabs.list')
         })
 
       } else {
@@ -104,11 +99,12 @@ angular.module('dropzio')
       }
 
     })
-
-    StatusBar.styleLightContent();
-    StatusBar.styleBlackTranslucent();
-    StatusBar.styleBlackOpaque();
-
+    
+    if (StatusBar) {
+      StatusBar.styleLightContent();
+      StatusBar.styleBlackTranslucent();
+      StatusBar.styleBlackOpaque();
+    }
   }
 
 })

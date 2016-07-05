@@ -11,7 +11,6 @@ angular.module('dropzio')
   $scope.postList;
   // $scope.currentUserId = localStorage.getItem('id');
 
-  // var postListInterval =
   $interval(function(){
 
     var posOptions = {
