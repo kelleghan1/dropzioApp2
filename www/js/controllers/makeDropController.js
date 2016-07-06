@@ -51,8 +51,8 @@ angular.module('dropzio')
   $scope.makeDropFormSubmit = function(){
 
     var watchOptions = {
-      timeout: 15000,
-      enableHighAccuracy: false
+      timeout: 3000,
+      enableHighAccuracy: true
     };
 
     $cordovaGeolocation
@@ -99,7 +99,7 @@ angular.module('dropzio')
       }
 
     })
-    
+
     if (StatusBar) {
       StatusBar.styleLightContent();
       StatusBar.styleBlackTranslucent();
