@@ -11,10 +11,11 @@ angular.module('dropzio')
   $scope.postList;
   // $scope.currentUserId = localStorage.getItem('id');
 
-  function populate(){
+  $interval(function(){
 
     var posOptions = {
-      timeout: 10000, enableHighAccuracy: true
+      timeout: 3000,
+      enableHighAccuracy: true
     };
 
     $cordovaGeolocation
@@ -40,9 +41,7 @@ angular.module('dropzio')
       })
     })
 
-  }
-
-  $interval(populate(), 5000)
+  }, 5000)
 
   $scope.endEvent = function($event){
     $event.stopPropagation();

@@ -3,6 +3,6 @@ angular.module('dropzio')
 
 
 
-.service('ListService', [function(){
+.service('ListService', function(){
 
-}]);
+});
