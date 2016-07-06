@@ -1,17 +1,17 @@
 <ion-view title="<img src='img/dropsiologo1.png'>">
 
   <ion-content padding="true" class="has-header">
-    <form ng-submit='loginFormSubmit()' id="signup-form2" class="list ">
+    <form ng-submit='loginFormSubmit()' class="list ">
 
-      <label class="item item-input " id="signupUsername">
-        <input type="text" placeholder='Username' ng-model='userObj.user.userName'>
+      <label class="item item-input">
+        <input type="text" placeholder='Username' ng-model='userObj.user.userName' required>
       </label>
 
-      <label class="item item-input " id="signupPassword">
-        <input type="password" placeholder='Password' ng-model='userObj.user.password'>
+      <label class="item item-input">
+        <input type="password" placeholder='Password' ng-model='userObj.user.password' required>
       </label>
 
-      <input class="button button-block" id='loginSubmitButton' type="submit">
+      <input class="button button-block" type="submit" value="Log In">
     </form>
 
     <div class='textCenter'>
@@ -30,16 +30,20 @@
       <img class='landingImg' src="img/dropzioanimation2.png" >
     </div>
 
-    <div id='landingWrap3' ng-show='landing3' >
+     <div id='landingWrap3' ng-show='landing3' >
       <img class='landingImg' src="img/dropzioanimation3.png" >
     </div>
 
-    <div id='landingWrap3' ng-show='landing4' >
+    <div id='landingWrap4' ng-show='landing4' >
       <img class='landingImg' src="img/dropzioanimation4.png" >
     </div>
 
-    <div id='landingWrap3' ng-show='landing5' >
+    <div id='landingWrap5' ng-show='landing5' >
       <img class='landingImg' src="img/dropzioanimation5.png" >
+    </div>
+
+    <div id='landingWrap6' ng-show='landing6' >
+      <img class='landingImg' src="img/dropzioanimation6.png" >
     </div>
 
 

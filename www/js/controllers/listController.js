@@ -11,7 +11,7 @@ angular.module('dropzio')
   $scope.postList;
   // $scope.currentUserId = localStorage.getItem('id');
 
-  $interval(function(){
+  function populate(){
 
     var posOptions = {
       timeout: 10000, enableHighAccuracy: true
@@ -40,8 +40,9 @@ angular.module('dropzio')
       })
     })
 
-  }, 5000)
+  }
 
+  $interval(populate(), 5000)
 
   $scope.endEvent = function($event){
     $event.stopPropagation();

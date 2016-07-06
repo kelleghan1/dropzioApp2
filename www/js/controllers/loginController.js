@@ -7,59 +7,50 @@ angular.module('dropzio')
   $scope.landing3 = 1;
   $scope.landing4 = 1;
   $scope.landing5 = 1;
+  $scope.landing6 = 1;
 
   $scope.landingImage = function(){
 
     $timeout(function(){
-      console.log('switch');
       $scope.landing = 0;
-    }, 600)
+    }, 1000)
 
   }()
 
   $scope.landingImage1 = function(){
-
     $timeout(function(){
-      console.log('switch');
       $scope.landing1 = 0;
-    }, 700)
-
+    }, 1100)
   }()
 
   $scope.landingImage2 = function(){
-
     $timeout(function(){
-      console.log('switch');
       $scope.landing2 = 0;
-    }, 800)
-
+    }, 1200)
   }()
 
   $scope.landingImage3 = function(){
-
     $timeout(function(){
-      console.log('switch');
       $scope.landing3 = 0;
-    }, 1100)
-
+    }, 1350)
   }()
 
   $scope.landingImage4 = function(){
-
     $timeout(function(){
-      console.log('switch');
       $scope.landing4 = 0;
-    }, 1250)
-
+    }, 1450)
   }()
 
   $scope.landingImage5 = function(){
-
     $timeout(function(){
-      console.log('switch');
       $scope.landing5 = 0;
-    }, 1500)
+    }, 1550)
+  }()
 
+  $scope.landingImage6 = function(){
+    $timeout(function(){
+      $scope.landing6 = 0;
+    }, 1700)
   }()
 
   $scope.userObj = {

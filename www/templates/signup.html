@@ -1,21 +1,21 @@
-<ion-view class='has-header' title="<img src='img/dropsiologo1.png'>" id="page6" class=" ">
+<ion-view class='has-header' title="<img src='img/dropsiologo1.png'>" class=" ">
 
-  <ion-content padding="true" class="has-header">
-    <form ng-submit='signupFormSubmit()' id="signup-form2" class="list ">
+  <ion-content padding="true">
+    <form ng-submit='signupFormSubmit()' class="list ">
 
-        <label class="item item-input " id="signupUsername">
+        <label class="item item-input" required>
           <input type="text" placeholder="Username" ng-model='userObj.user.userName'>
         </label>
 
-        <label class="item item-input " id="signupPassword">
-          <input type="password" placeholder="Password" ng-model='userObj.user.password'>
+        <label class="item item-input">
+          <input type="password" placeholder="Password" ng-model='userObj.user.password' required>
         </label>
 
-        <label class="item item-input" id="signupVerify">
+        <label class="item item-input">
           <input type="password" placeholder="Verify Password">
         </label>
 
-      <input class="button button-block" id='signupSubmitButton' type="submit">
+      <input class="button button-block" type="submit" value='Submit'>
     </form>
   </ion-content>
 
