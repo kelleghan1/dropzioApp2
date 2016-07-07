@@ -61,7 +61,7 @@ angular.module('dropzio')
       }
     })
 
-    var watchOptions = {
+    var watchOptions ={
       timeout: 1000,
       enableHighAccuracy: false
     };
