@@ -61,15 +61,17 @@ angular.module('dropzio')
       }
     })
 
-    var watchOptions ={
-      timeout: 1000,
-      enableHighAccuracy: false
-    };
 
 
     $scope.angleDeg = Math.atan2($scope.destination.lat - $scope.currentLocation.compass.lat, $scope.destination.long - $scope.currentLocation.compass.long) * 180 / Math.PI
     // console.log(orientation);
     angular.element(document.querySelector('#needle')).css('-webkit-transform', 'rotate(' + $scope.bearing + 'deg)' )
+
+
+    var watchOptions = {
+      timeout: 1000,
+      enableHighAccuracy: false
+    };
 
   }, 500);
 
