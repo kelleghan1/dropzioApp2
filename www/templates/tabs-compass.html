@@ -1,9 +1,13 @@
 <ion-view title="<img src='img/dropsiologo1.png'>">
 
   <ion-content padding="true" class="has-header">
-    
-    <h1>Compass</h1>
 
+    <h1>{{getBearing}}</h1>
+
+    <input class="button button-block" type='button' value='Find Nearby Posts' ng-click="findNearbyPosts()">
+    <div class='centerImg'>
+      <img id='needle' src="http://findicons.com/files/icons/2315/default_icon/256/arrow_up.png" alt="">
+    </div>
   </ion-content>
 
 </ion-view>

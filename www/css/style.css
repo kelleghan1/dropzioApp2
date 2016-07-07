@@ -51,8 +51,6 @@ body {
   background-color: transparent
 }
 
-
-
 .textCenter {
   text-align: center;
 }
@@ -80,4 +78,10 @@ body {
 #dropIconWrap {
 
   /*vertical-align: bottom;*/
+}
+
+.centerImg {
+  text-align: center;
+  margin: 0 auto;
+
 }

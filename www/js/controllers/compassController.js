@@ -1,6 +1,13 @@
 angular.module('dropzio')
-.controller('CompassController', function($state, $scope){
+.controller('CompassController', function(
+  $state,
+  $scope,
+  $cordovaGeolocation,
+  $interval,
+  $cordovaDeviceOrientation,
+  CompassService
 
+){
 
   $scope.currentLocation;
   $scope.destination = {};
@@ -37,8 +44,13 @@ angular.module('dropzio')
     }
   })
 
-
   $interval(function(){
+    $cordovaGeolocation
+    .getCurrentPosition(watchOptions)
+    .then(function (position) {
+      $scope.currentLocation.compass.lat = position.coords.latitude;
+      $scope.currentLocation.compass.long = position.coords.longitude;
+    })
 
     $cordovaDeviceOrientation.getCurrentHeading()
     .then(function(orientResult){
@@ -54,24 +66,11 @@ angular.module('dropzio')
       enableHighAccuracy: false
     };
 
-    $cordovaGeolocation
-    .getCurrentPosition(watchOptions)
-    .then(function (position) {
-      $scope.currentLocation.compass.lat = position.coords.latitude;
-      $scope.currentLocation.compass.long = position.coords.longitude;
-    })
-
 
     $scope.angleDeg = Math.atan2($scope.destination.lat - $scope.currentLocation.compass.lat, $scope.destination.long - $scope.currentLocation.compass.long) * 180 / Math.PI
     // console.log(orientation);
     angular.element(document.querySelector('#needle')).css('-webkit-transform', 'rotate(' + $scope.bearing + 'deg)' )
 
-
   }, 500);
-
-
-
-
-
 
 })
